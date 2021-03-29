@@ -1,0 +1,22 @@
+{
+    "python.pythonPath": "c:\\Users\\user\\Projects\\jimi-env\\Scripts\\python.exe",
+    "workbench.sideBar.location": "left",
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "git.ignoreLimitWarning": true,
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        120
+    ],
+    "python.linting.pylintArgs": [
+        "--max-line-length=120",
+        "--output-format=colorized"
+    ],
+    "python.formatting.autopep8Args": [
+        "--max-line-length",
+        "120",
+        "experimental"
+    ],
+    "python.autoComplete.addBrackets": true
+}

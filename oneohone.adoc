@@ -1,0 +1,195 @@
+= Object Oriented Programming in Python
+
+
+:author: Sarp Yucel
+:email: merdansarpyucel@gmail.com
+:nofooter:
+
+== Terminology
+
+[.lead]
+I want to start with terminolgic words which uses in OOP in Python.
+
+* Class
+- A user-defined prototype for an object that defines a set of attributes that characterize any object of the class. The attributes are data members (class variables and instance variables) and methods, accessed via dot notation.
+
+* Class Variable
+- A variable that is shared by all instances of a class. Class variables are defined within a class but outside any of the class's methods. Class variables are not used as frequently as instance variables are.
+
+* Data Member
+- A class variable or instance variable that holds data associated with a class and its objects.
+
+* Function Overloading
+- The assignment of more than one behavior to a particular function. The operation performed varies by the types of objects or arguments involved.
+
+* Instance Variable
+- A variable that is defined inside a method and belongs only to the current instance of a class.
+
+* Inheritance
+- The transfer of the characteristics of a class to other classes that are derived from it.
+- Diamond Problem
+
+* Encapsualtion
+- Packing of data and functions operating on that data into a single component and restricting the access to some of the object's components. Encapsulation means that the internal representation of an object is generally hidden from view outside of the object's definition.
+
+* Instance
+- An individual object of a certain class. An object obj that belongs to a class Circle, for example, is an instance of the class Circle.
+
+* Instantiation
+- The creation of an instance of a class.
+
+* Method
+- A special kind of function that is defined in a class definition.
+
+* Object
+- A unique instance of a data structure that's defined by its class. An object comprises both data members (class variables and instance variables) and methods.
+
+* Operator Overloading
+- The assignment of more than one function to a particular operator.
+
+* Constructors
+- Constructors are generally used for instantiating an object.The task of constructors is to initialize(assign values) to the data members of the class when an object of class is created.In Python the __init__() method is called the constructor and is always called when an object is created. +
+
+* Context Manager
+- With, yield usage falan
+
+* Generator Functions
+
+* Garbage Collector
+- Selam falan
+
+== Classes
+
+.Define A Class
+[source, python]
+----
+include::class_1.py[]
+----
+
+.Output
+[source, console]
+----
+Selami
+77
+Male
+----
+
+- The first method __init__() is a special method, which is called class constructor or initialization method that Python calls when you create a new instance of this class.
+
+.Define A Class with Default Paremeters
+[source, python]
+----
+include::class_2.py[]
+----
+
+.Output
+[source, console]
+----
+person_one's Name: Regen KID, Age: 23, Sex: None
+person_two's Name: Debbie Harry, Age: 75, Sex: Female 
+----
+
+- Classes can have their own functions (a.k.a 'METHOD'). 
+
+.Class Methods
+[source, python]
+----
+include::class_3.py[]
+----
+
+.Output
+[source, console]
+----
+person_two's Name: Debbie Harry, Age: 75, Location: Turkey
+Debbie Harry's bank acoount id is: 37652487
+----
+
+=== Encapsulation
+
+- We can reach and change the objects variables. Sometetimes We may prohibit the access from out of scope (for security etc.). So If We will use encapsulation, we can prevent undesired usages.
+
+.Encapsulation of Object's variables
+[source, python]
+----
+include::encapsulation_1.py[]
+----
+
+.Output
+[source, console]
+----
+AttributeError: 'Person' object has no attribute 'name'
+----
+
+- We couldn't get name value from out of class scope, so we wrote a getter function to reach this variable. With Encapsulation, we can control attributes.
+
+.Get and Set Encapsulated Object's variables
+[source, python]
+----
+include::encapsulation_2.py[]
+----
+
+.Output
+[source, console]
+----
+person_two's Name: Debbie Harry, Age: 75, Sex: Female
+person_two's Name: New Debbie
+----
+
+
+=== Inheritance
+- Inheritance models what is called an is a relationship. This means that when you have a Derived class that inherits from a Base class, you created a relationship where Derived is a specialized version of Base. +
+
+** Classes that inherit from another are called derived classes, subclasses, or subtypes.
+** Classes from which other classes are derived are called base classes or super classes.
+** A derived class is said to derive, inherit, or extend a base class.
+
+** Overriding: Method overriding is thus a part of the inheritance mechanism. In Python method overriding occurs by simply defining in the child class a method with the same name of a method in the parent class.
+
+*** So We must define __init__ (constructor) again for child classess.
+
+** Interface: For an object, is a set of methods and attributes on that object.
+
+** In Python, we can use an abstract base class to define and enforce an interface.
+
+*** At a high level, an interface acts as a blueprint for designing classes. Like classes, interfaces define methods. Unlike classes, these methods are abstract. An abstract method is one that the interface simply defines. It doesn’t implement the methods. This is done by classes, which then implement the interface and give concrete meaning to the interface’s abstract methods.
+
+*** Python’s approach to interface design is somewhat different when compared to languages like Java, Go, and C++. These languages all have an interface keyword, while Python does not. Python further deviates from other languages in one other aspect. It doesn’t require the class that’s implementing the interface to define all of the interface’s abstract methods.
+
+** This is known as the Liskov substitution principle. The principle states that “in a computer program, if S is a subtype of T, then objects of type T may be replaced with objects of type S without altering any of the desired properties of the program”.
+.Using Inheritence and Overriding
+[source, python]
+----
+include::inheritance_1.py[]
+----
+
+.Output
+[source, console]
+----
+person_1's age: 33 and real age: 33
+musician_1's age: 75 and real age: 75
+developer_1's age: 70 and real age: 105.0
+----
+
+
+** Abstract Base Classes
+*** With Using Abstract Class;
+**** Telling users of the module that objects of type Base Class can’t be created.
+**** Telling other developers working on the same module that if they derive from Base Class, then they must override the abstract method.
+
+.Using Abstract Classes for Inherit A Function
+[source, python]
+----
+include::inheritance_2.py[]
+----
+
+.Output
+[source, console]
+----
+0.14285714285714285
+Traceback (most recent call last):
+  File "C:\Users\user\Projects\advanced-python\inheritance_2.py", line 37, in <module>     
+    person_1 = Person("John Doe", 123)
+TypeError: Can't instantiate abstract class Person with abstract method calculate_happiness
+----
+
+** We accessed to inherited class but we couldn't accessed to abstract class and method.
