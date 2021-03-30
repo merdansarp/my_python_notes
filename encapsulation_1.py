@@ -10,5 +10,5 @@ class Person():
 
 
 person_two = Person(name="Debbie Harry", age=75, sex="Female")
-print(f"person_two's Name: {person_two.name()}, Age: {person_two.age}, Sex: {person_two.sex}")
 print(f"person_two's Name: {person_two.get_name()}, Age: {person_two.age}, Sex: {person_two.sex}")
+print(f"person_two's Name: {person_two.name()}, Age: {person_two.age}, Sex: {person_two.sex}")

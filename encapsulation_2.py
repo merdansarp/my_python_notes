@@ -1,18 +1,34 @@
 class Person():
 
-    def __init__(self, name, age=23, sex=None):
-        self.__name = name
-        self.age = age
-        self.sex = sex
+    _name = None
+    _age = None
+    _location = None
+
+    def __init__(self, name, age=27, location="Turkey"):
+        """ This is constructor method. """
+        self._name = name
+        self._age = age
+        self._location = location
     
-    def get_name(self):
-        return self.__name
+    def _show_ages_and_locations(self):
+        """ Protected Function. We Can access to protected data members"""
 
-    def set_name(self, new_name):
-        self.__name = new_name
+        print("Age: ", self._age)
+        print("Location: ", self._location)
+
+class Developer(Person):
+
+    def __init__(self, name, age, location, company):
+        super().__init__(name, age, location)
+        self.company = company
+
+    def show_developer_info(self):
+        """ We create public method and we can access to protected data 
+        members and methods of super class in here. """
+
+        print("Developer's Name: ", self._name)
+        self._show_ages_and_locations()
 
 
-person_two = Person(name="Debbie Harry", age=75, sex="Female")
-print(f"person_two's Name: {person_two.get_name()}, Age: {person_two.age}, Sex: {person_two.sex}")
-person_two.set_name("New Debbie")
-print(f"person_two's Name: {person_two.get_name()}")
+dev_one = Developer("Dennis Ritchie", 70, "USA", "Lucent Technologies")
+dev_one.show_developer_info()

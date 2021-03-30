@@ -19,7 +19,7 @@ class Musician(Person):
 
 person_1 = Person("John Doe", 33)
 print(f"person_1's age: {person_1.age} and real age: {person_1.get_real_age()}")
-musician_1 = Musician("Debbie Harry", 75, "New Vave/Punk", "Blondie")
+musician_1 = Musician("Debbie Harry", 75, "New Wave/Punk", "Blondie")
 print(f"musician_1's age: {musician_1.age} and real age: {musician_1.get_real_age()}")
 
 
