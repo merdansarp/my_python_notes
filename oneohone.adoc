@@ -290,6 +290,24 @@ TypeError: Can't instantiate abstract class Person with abstract method calculat
 Multiple Inheritence: When a class is derived from more than one base class it is called multiple Inheritance. 
 The derived class inherits all the features of the base case.
 
+.Multiple Inheritence
+[source, python]
+----
+include::inheritence_multi.py[]
+----
+
+.Output
+[source, console]
+----
+You cannot change your nickname
+Person ONE: Ada Lovelace, 206
+Developer ONE: John Anderson, Neo, SomeWhereCoop, USA        
+Hybrid ONE: Fiona Apple, 45, Fiona, SomeWhereCoop, USA       
+Getting Person Name ....
+Fiona Apple
+Hybrid ONE: Fiona Apple, 46, Hot Knife, SomeWhereCoop, Turkey
+----
+
 - Diamond Problem:
 
 image::Diamond1.png[Diamond Problem]
