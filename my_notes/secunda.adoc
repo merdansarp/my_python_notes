@@ -45,6 +45,12 @@ image::immutable.png["Immutable Table"]
 
 == Usage of Asterisk - Send Multiple Parameters to Function with *Args and **Kwargs
 
+- *args: Non-Keyword Arguments
+    * Using the *, the variable that we associate with the * becomes an iterable meaning you can do things like iterate 
+    over it, run some higher-order functions such as map and filter, etc.
+- **kwargs: Keyword Arguments
+    * A keyword argument is where you provide a name to the variable as you pass it into the function.
+
 - We can unpack variables with using args and kwargs.
 
 - single asterisk (*) is using for unpack iterables.
