@@ -1,0 +1,234 @@
+= My Notes in Python
+
+:author: Sarp Yucel
+:email: merdansarpyucel@gmail.com
+:nofooter:
+
+== Index
+
+[.lead]
+
+* Variable Types
+
+* Usage of Asterisk - Send Multiple Parameters to Function with *args and **kwargs
+
+* Decorators
+
+* Design Pattern
+
+* Context Managers
+
+* Generator Functions
+
+* Multithread
+
+* Garbage Colelctor
+
+* Optimization
+
+* Street Coding
+
+
+== Variable Types
+
+- When an object is initiaded, it is assigned a unique object id. It's type is defined at runtime and once set can never
+change, however it's state can be changed if it is mutable. Simple put, a mutable object can be changed after it is
+created; immutable object can't.
+
+- Mutable Object: Objects that can change after creation. (list, set, dict)
+
+- Immutable Object: Objects that can't change after creation. (int, float, bool, str, tuple, unicode)
+
+- Immutable Table:
+
+image::immutable.png["Immutable Table"]
+
+== Usage of Asterisk - Send Multiple Parameters to Function with *Args and **Kwargs
+
+- We can unpack variables with using args and kwargs.
+
+- single asterisk (*) is using for unpack iterables.
+-- result return as tuple.
+
+- double asterisk (**) is using for unpack dictionaries.
+-- result return as dict.
+
+.Unpacking With args or kwargs
+[source, python]
+----
+include::asterisk/unpacking.py[]
+----
+
+.Output
+[source, console]
+----
+Our List:  [6, 7, 8, 9, 10, 11] 
+
+Unpack our list with * -> Asterisk
+6 7 8 9 10 11
+
+Unpack [6, 7, 8, 9, 10, 11] with multiple *args
+6 [7, 8, 9, 10] 11
+----
+
+- We can merge items with using args or kwargs (depends on data type)
+
+.Merging items with Asterisk Operator
+[source, python]
+----
+include::asterisk/merging.py[]
+----
+
+.Output
+[source, console]
+----
+Two lists: [5, 6, 7] and [5, 66, 77]
+Merged List with Asterisk: [5, 6, 7, 5, 66, 77]
+
+
+Two dicts: {'a': 2, 'b': 3, 'c': 4} and {'c': 6, 'd': 41, 'e': 19}    
+Merged Dict With Asterisk: {'a': 2, 'b': 3, 'c': 6, 'd': 41, 'e': 19} 
+----
+
+- args or kwargs names are just names. We can change this names when we are using. Important part is the asterisk(*)
+
+- We can send parameters to a function without using args or kwargs, of course. But sometimes we wouldn't know how many
+parameters come to our function. In that cases, we can use args or kwargs.
+
+.Multiple Parameters Wihtout Args/Kwargs Examples
+[source, python]
+----
+include::asterisk/multiple_parameters_one.py[]
+----
+
+.Output
+[source, console]
+----
+1. element: 6
+2. element: 7
+3. element: 8
+4. element: 9
+Sumamry of Integer List:  30
+***********************
+Numbers are 14 and 15
+Summary of Two Numbers:  29
+----
+
+- We can use *args for list type variables.
+
+.Multiple Parameters with *args
+[source, python]
+----
+include::asterisk/multiple_parameters_two.py[]
+----
+
+.Output
+[source, console]
+----
+*args seems like:  ((6, 7, 8, 9),)
+*args type is:  <class 'tuple'>
+(6, 7, 8, 9)
+***********************
+*args seems like:  (6, 7, 8, 9)
+*args type is:  <class 'tuple'>
+1. element: 6
+2. element: 7
+3. element: 8
+4. element: 9
+Summary of Integers:  30
+----
+
+- We can use **kwargs for dictionary type variables.
+
+.Multiple Parameters with **kwargs
+[source, python]
+----
+include::asterisk/multiple_parameters_three.py[]
+----
+
+.Output
+[source, console]
+----
+**kwargs seems like:  {'a': 6, 'b': 7, 'c': 8, 'd': 9}
+**kwargs type is:  <class 'dict'>
+a:6
+b:7
+c:8
+d:9
+Sumamry of Numbers:  30
+----
+
+- When defining a function, every parameter has its own order.
+
+.Defining Function with * Operator
+[source, python]
+----
+include::asterisk/usage.py[]
+----
+
+== Decorators
+
+- Decorators provide simple syntax for calling high order functions.
+- High Order Function: In mathematics and computer science, a high-order function is a function that does at least one
+of the following:
+    * take one or more functions as arguments (i.e procedural parameters),
+    * returns a function as its result.
+- All the other functions are first-order functions.
+- By definition, a decorator is a function that takes another function and extends the behaviour of the latter function
+without explicitly modfying it. And we use decorator a lot :D
+
+- Common Usages
+- Our Examples
+
+== Design Patterns
+
+- Design patterns are solutions to general problems that software developers faced during software development. These
+solutions were obtained by trial and error by numerous software developers over quite a sibstanial period of time.
+
+- Why we need?
+- Gang of Four
+- Common Python Patterns.
+- Common Usages
+- Our Examples
+
+=== Singleton
+
+- Why singleton?
+- Give examples.
+
+== Context Managers
+
+- Why we need?
+- Common Usages
+- Our Examples
+
+== Multithread
+
+- Why we need?
+- Common Usages
+- Our Examples
+
+== Garbage Collector
+
+- Why we need?
+
+- The Garbage Collector is keeping tarck of all objects in memory. A new object starts its life in the first generation
+of the garbage collector. If Python executes a garbage collection process on a generation and an object survives, it
+moves up into second, older generation.
+
+- Common Usages
+- Our Examples
+
+== Optimization
+
+- Why we need?
+- Maybe game or demo examples. (DEMO CULTURE)
+- Common Usages
+- Our Examples
+
+== Street Coding
+
+- What is Street Coding?
+- Why we need them / Advantages
+- Common Usages
+- Our Examples

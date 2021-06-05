@@ -18,5 +18,6 @@
         "120",
         "experimental"
     ],
-    "python.autoComplete.addBrackets": true
+    "python.autoComplete.addBrackets": true,
+    "python.analysis.completeFunctionParens": true
 }

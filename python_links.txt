@@ -35,3 +35,6 @@ https://www.geeksforgeeks.org/access-modifiers-in-python-public-private-and-prot
 dunder/magic methods
 https://www.programiz.com/python-programming/generator
 https://rszalski.github.io/magicmethods/
+
+asterisk
+https://realpython.com/python-kwargs-and-args/
