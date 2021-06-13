@@ -12,9 +12,9 @@
 
 * Usage of Asterisk - Send Multiple Parameters to Function with *args and **kwargs
 
-* Decorators
+* Design Patterns
 
-* Design Pattern
+** Decorators
 
 * Context Managers
 
@@ -24,7 +24,7 @@
 
 * Garbage Colelctor
 
-* Optimization
+* Performance Improvement
 
 * Street Coding
 
@@ -172,7 +172,64 @@ Sumamry of Numbers:  30
 include::asterisk/usage.py[]
 ----
 
-== Decorators
+== Design Patterns
+
+- Design patterns are solutions to general problems that software developers faced during software development. These
+solutions were obtained by trial and error by numerous software developers over quite a sibstanial period of time.
+
+- Why we need?
+- Gang of Four
+- Common Python Patterns.
+- Common Usages
+- Our Examples
+
+- Some Principles to Follow
+* Never create things that shouldn’t be created: Your classes should follow the single responsibility principle;
+the idea that a class should only do one thing.
+
+* Keep constructors simple: Constructors should be kept simple. The constructor of a class shouldn’t be doing any work — 
+that is, they shouldn’t be doing anything other than checking for null, creating creatables, and storing dependencies 
+for later use. They shouldn’t include any coding logic.
+
+* Don’t assume anything about the implementation: Interfaces are, of course, useless without an implementation. 
+However, you, as a developer, should never make any assumptions about what that implementation is.
+
+=== Behavioral Patterns
+
+==== Iterators
+
+- What is iterators?
+- Examples
+
+==== Observers
+
+- An object, called the Subject (Observable), manages a list of dependents, called Observers, and notifies them 
+automatically of any internal state changes by calling one of their methods.
+- The Observer pattern follows the publish/subscribe concept. A subscriber, subscribes to a publisher. The publisher 
+then notifies the subscribers when necessary.
+- The observer stores state that should be consistent with the subject. The observer only needs to store what is 
+necessary for its own purposes.
+- Define a one-to-many dependency between objects so that when one object changes state, all its dependents are 
+notified and updated automatically.
+- Encapsulate the core (or common or engine) components in a Subject abstraction, and the variable 
+(or optional or user interface) components in an Observer hierarchy.
+
+image::design_patterns/observer/observer.png[Observer Example]
+
+.Observer Example
+----
+include::design_patterns/observer/observer_1.py[]
+----
+
+.Output
+[source, console]
+----
+
+----
+
+=== Structural Patterns
+
+==== Decorators
 
 - Decorators provide simple syntax for calling high order functions.
 - High Order Function: In mathematics and computer science, a high-order function is a function that does at least one
@@ -186,21 +243,65 @@ without explicitly modfying it. And we use decorator a lot :D
 - Common Usages
 - Our Examples
 
-== Design Patterns
+==== Facade
 
-- Design patterns are solutions to general problems that software developers faced during software development. These
-solutions were obtained by trial and error by numerous software developers over quite a sibstanial period of time.
+- What is Facade?
+- Examples
 
-- Why we need?
-- Gang of Four
-- Common Python Patterns.
-- Common Usages
-- Our Examples
+=== Creational Patterns
 
-=== Singleton
+==== Singleton
 
 - Why singleton?
 - Give examples.
+
+=== Dependency Injection
+
+- Dependency Injection is "D" for SOLID Principles.
+- Dependency Injection is an object-oriented software design principle that creates less fragile code and makes 
+writing tests easier by decoupling lower-level classes from higher-level classes.
+- Minimalistic dependencies — As the dependencies are clearly defined, easier to eliminate/reduce unnecessary 
+dependencies.
+- Code with reduced module complexity, increased module reusability.
+- Instantiating mock objects and integrating with class definitions is easier. (Easy To Test :D)
+- Flexibility of configurable components.
+
+.Without Dependency Injection Principles
+----
+include::design_patterns/dependency_injection/without_di.py[]
+----
+
+.Output
+[source, console]
+----
+[13-06-2021 20:39:25] -> Joy Division Concert at Concert Hall
+----
+
+.With Dependency Injection Principles
+----
+include::design_patterns/dependency_injection/with_di.py[]
+----
+
+.Output
+[source, console]
+----
+[13-06-2021 20:39:25] -> Joy Division Concert at Concert Hall
+----
+
+- Benefits of Dependency Injection
+* Maintainability: Probably the main benefit of dependency injection is maintainability. 
+If your classes are loosely coupled and follow the single responsibility principle — the natural result of using DI — 
+then your code will be easier to maintain.
+* Testability: Along the same lines as maintainability is testability. Code that is easy to test is tested more often. 
+More testing means higher quality.
+* Readability: Code that uses DI is more straightforward. It follows the single responsibility principle and 
+thus results in smaller, more compact, and to-the-point classes.
+* Flexibility: Loosely coupled code — yet again, the result of using dependency injection — is more flexible and usable 
+in different ways. Small classes that do one thing can more easily be reassembled and reused in different situations
+* Extensibility: Code that uses dependency injection results in a more extendable class structure. By relying on 
+abstractions instead of implementations, code can easily vary a given implementation.
+* Team-ability: If you are on a team and that team needs to work together on a project (when is that not true?), 
+then dependency injection will facilitate team development.
 
 == Context Managers
 
@@ -210,24 +311,123 @@ solutions were obtained by trial and error by numerous software developers over 
 
 == Multithread
 
-- Why we need?
-- Common Usages
-- Our Examples
+- Multiple threads within a process share the same data space with the main thread and can therefore share information 
+or communicate with each other more easily than if they were separate processes.
+- Threads sometimes called light-weight processes and they do not require much memory overhead; 
+they are cheaper than processes.
+- A thread has a beginning, an execution sequence, and a conclusion. It has an instruction pointer that keeps track 
+of where within its context it is currently running.
+- We have a function that send request to 3rd Party API and it may be take a few seconds.
+- Let's write a program without multithread and convert to multithread and compare programs run times.
 
-== Garbage Collector
+.Program Without Multithread
+[source, python]
+----
+include::multithread/example_without_multithread.py[]
+----
 
-- Why we need?
+.Output
+[source, console]
+----
+It takes 32.048429012298584 seconds
+----
 
-- The Garbage Collector is keeping tarck of all objects in memory. A new object starts its life in the first generation
+- We separate functions and data because program runs with threads. We must know what each threads do on their lifetime.
+
+.Same Program With Multithread
+[source, python]
+----
+include::multithread/example_with_multithread.py[]
+----
+
+.Output
+[source, console]
+----
+It takes 4.031013011932373 seconds
+----
+
+- Disadvantages of Multithreading:
+* On a single processor system, multithreading won’t hit the speed of computation. The performance may downgrade due 
+to the overhead of managing threads.
+* Multithreading increases the complexity of the program, thus also making it difficult to debug.
+* It raises the possibility of potential deadlocks.
+* It may cause starvation when a thread doesn’t get regular access to shared resources. The application would 
+then fail to resume its work.
+
+== Garbage Collector/Collection
+
+- The Garbage Collector is keeping track of all objects in memory. A new object starts its life in the first generation
 of the garbage collector. If Python executes a garbage collection process on a generation and an object survives, it
 moves up into second, older generation.
+- How Python implements garbage collection There are two aspects to memory management and garbage collection in CPython:
+    * Reference counting: At a very basic level, a Python object’s reference count is incremented whenever the object is 
+    referenced, and it’s decremented when an object is dereferenced. If an object’s reference count is 0, the memory for 
+    the object is deallocated.
+    * Generational garbage collection: There are two key concepts to understand with the generational garbage collector.
+        ** The first concept is that of a generation.
+        ** The second key concept is the threshold.
+    * The garbage collector is keeping track of all objects in memory. 
+    A new object starts its life in the first generation of the garbage collector. If Python executes a garbage 
+    collection process on a generation and an object survives, it moves up into a second, older generation. The Python 
+    garbage collector has three generations in total, and an object moves into an older generation whenever it 
+    survives a garbage collection process on its current generation.
+    * For each generation, the garbage collector module has a threshold number of objects. If the number of objects 
+    exceeds that threshold, the garbage collector will trigger a collection process. For any objects that survive that 
+    process, they’re moved into an older generation.
+    * Unlike the reference counting mechanism, you may change the behavior of the generational garbage collector 
+    in your Python program. This includes changing the thresholds for triggering a garbage collection process in your 
+    code. Additionally, you can manually trigger a garbage collection process, or disable the garbage collection 
+    process altogether.
 
-- Common Usages
-- Our Examples
+.GC(Garbage Collection) Module Get Methods.
+[source, python]
+----
+include::garbage_collection/gc_module_1.py[]
+----
 
-== Optimization
+.Output
+[source, console]
+----
+Threshoold:  (700, 10, 10)
+Number Of Objects in Generation:  (544, 4, 1)
+(544, 4, 1)
+0
+(1, 0, 0)
+----
+- Running a garbage collection process cleans up a huge amount of objects—there are 544 objects in the first generation 
+and 5 (4, 1) more in the older generations.
+
+- We can change thresholds.
+
+.GC(Garbage Collection) Module Set Methods.
+[source, python]
+----
+include::garbage_collection/gc_module_2.py[]
+----
+
+.Output
+[source, console]
+----
+Threshoold:  (700, 10, 10)
+Threshoold:  (1000, 20, 30)
+----
+
+- In the example above, we increase each of our thresholds from their defaults. Increasing the threshold will reduce the 
+frequency at which the garbage collector runs. This will be less computationally expensive in your program at the 
+expense of keeping dead objects around longer.
+
+NOTE: Don’t change garbage collector behavior: As a general rule, you probably shouldn’t think about Python’s garbage 
+collection too much. One of the key benefits of Python is it enables developer productivity. Part of the reason for this 
+is because it’s a high-level language that handles a number of low-level details for the developer.
+
+- EXAMPLE: The Instagram (Django) team disabled the garbage collector module by setting the thresholds for all 
+generations to zero. This change led to their web applications running 10% more efficiently.
+
+
+== Performance Improvement
 
 - Why we need?
+- Performance Tips and Usage.
 - Maybe game or demo examples. (DEMO CULTURE)
 - Common Usages
 - Our Examples

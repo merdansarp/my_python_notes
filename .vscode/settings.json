@@ -1,11 +1,12 @@
 {
-    "python.pythonPath": "c:\\Users\\user\\Projects\\jimi-env\\Scripts\\python.exe",
+    "python.pythonPath": "/Users/sarpyucel/dev/envs/jimi-env/bin/python3.9",
     "workbench.sideBar.location": "left",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "git.ignoreLimitWarning": true,
     "python.terminal.activateEnvInCurrentTerminal": true,
     "editor.formatOnSave": true,
+    "editor.autoClosingQuotes": "never",
     "editor.rulers": [
         120
     ],

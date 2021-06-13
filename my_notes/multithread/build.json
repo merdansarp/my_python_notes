@@ -1,0 +1,132 @@
+{
+    "build_id": "063441_tepbuild.6.2020-02-24",
+    "status": "FINISH",
+    "author": "Sarp 123123123",
+    "start_time": "2020-02-24 16:16:16",
+    "jobs": [
+        {
+            "status": "FINISH",
+            "name": "1_job",
+            "start_time": "2020-02-24 16:16:16",
+            "tasks": [
+                {
+                    "status": "FINISH",
+                    "name": "1_job_1_task",
+                    "start_time": "2020-02-24 16:15:16",
+                    "report_link": "http://apostonews.com/11"
+                },
+                {
+                    "status": "STOPPED",
+                    "name": "1_job_2_task",
+                    "start_time": "2020-02-24 16:15:21",
+                    "report_link": "http://apostonews.com/12"
+                },
+                {
+                    "status": "FAILED",
+                    "name": "1_job_3_task",
+                    "start_time": "2020-02-24 16:15:45",
+                    "report_link": "http://apostonews.com/13"
+                },
+                {
+                    "status": "SUCCESS",
+                    "name": "1_job_4_task",
+                    "start_time": "2020-02-24 16:15:59",
+                    "report_link": "http://apostonews.com/14"
+                }
+            ]
+        },
+        {
+            "status": "FINISH",
+            "name": "2_job",
+            "start_time": "2020-02-24 15:15:15",
+            "tasks": [
+                {
+                    "status": "FINISH",
+                    "name": "2_job_1_task",
+                    "start_time": "2020-02-24 15:14:05",
+                    "report_link": "http://apostonews.com/21"
+                },
+                {
+                    "status": "STOPPED",
+                    "name": "2_job_2_task",
+                    "start_time": "2020-02-24 15:14:10",
+                    "report_link": "http://apostonews.com/22"
+                },
+                {
+                    "status": "FAILED",
+                    "name": "2_job_3_task",
+                    "start_time": "2020-02-24 15:14:15",
+                    "report_link": "http://apostonews.com/23"
+                },
+                {
+                    "status": "SUCCESS",
+                    "name": "2_job_4_task",
+                    "start_time": "2020-02-24 15:14:52",
+                    "report_link": "http://apostonews.com/24"
+                }
+            ]
+        },
+        {
+            "status": "FINISH",
+            "name": "3_job",
+            "start_time": "2020-02-24 14:14:14",
+            "tasks": [
+                {
+                    "status": "FINISH",
+                    "name": "3_job_1_task",
+                    "start_time": "2020-02-24 14:13:05",
+                    "report_link": "http://apostonews.com/31"
+                },
+                {
+                    "status": "STOPPED",
+                    "name": "3_job_2_task",
+                    "start_time": "2020-02-24 14:13:10",
+                    "report_link": "http://apostonews.com/32"
+                },
+                {
+                    "status": "FAILED",
+                    "name": "3_job_3_task",
+                    "start_time": "2020-02-24 14:13:15",
+                    "report_link": "http://apostonews.com/33"
+                },
+                {
+                    "status": "SUCCESS",
+                    "name": "3_job_4_task",
+                    "start_time": "2020-02-24 14:13:19",
+                    "report_link": "http://apostonews.com/34"
+                }
+            ]
+        },
+        {
+            "status": "FINISH",
+            "name": "4_job",
+            "start_time": "2020-02-24 13:13:13",
+            "tasks": [
+                {
+                    "status": "FINISH",
+                    "name": "4_job_1_task",
+                    "start_time": "2020-02-24 13:12:05",
+                    "report_link": "http://apostonews.com/41"
+                },
+                {
+                    "status": "STOPPED",
+                    "name": "4_job_2_task",
+                    "start_time": "2020-02-24 13:12:10",
+                    "report_link": "http://apostonews.com/42"
+                },
+                {
+                    "status": "FAILED",
+                    "name": "4_job_3_task",
+                    "start_time": "2020-02-24 13:12:15",
+                    "report_link": "http://apostonews.com/43"
+                },
+                {
+                    "status": "SUCCESS",
+                    "name": "4_job_4_task",
+                    "start_time": "2020-02-24 13:12:20",
+                    "report_link": "http://apostonews.com/44"
+                }
+            ]
+        }
+    ]
+}
