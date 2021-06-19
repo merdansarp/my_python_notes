@@ -45,6 +45,7 @@ https://levelup.gitconnected.com/dependency-injection-in-python-3-with-testing-5
 https://betterprogramming.pub/the-6-benefits-of-dependency-injection-7802b207ec69
 https://sourcemaking.com/design_patterns/observer
 https://sourcemaking.com/design_patterns/observer/python/1
+https://www.geeksforgeeks.org/iterator-method-python-design-patterns/
 
 garbage collection
 https://docs.python.org/3/library/gc.html

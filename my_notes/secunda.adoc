@@ -240,13 +240,56 @@ of the following:
 - By definition, a decorator is a function that takes another function and extends the behaviour of the latter function
 without explicitly modfying it. And we use decorator a lot :D
 
-- Common Usages
-- Our Examples
+- I wrote decorators.py and added two decorators in it. Then I used these decorators in another file.
+
+.Decorators
+----
+include::design_patterns/decorator/decorators.py[]
+----
+
+.Usage of Decorators
+----
+include::design_patterns/decorator/example.py[]
+----
+
+.Output
+[source, console]
+----
+Exception Occured! ->  division by zero
+Exception Occured! ->  unsupported operand type(s) for /: 'int' and 'str'
+I'm only sleeping
+Elapsed Time: 3.005300998687744 seconds
+----
+
 
 ==== Facade
 
-- What is Facade?
-- Examples
+- According to GoF, Facade design pattern is defind as:
+Provide a unified interface to a set of interfaces in a subsystem. Facade Pattern defines a higher-level interface that 
+makes the subsystem easier to use.
+
+- Facade can be recognized in a class that has a simple interface, but delegates most of the work to other classes. 
+Usually, facades manage the full life cycle of objects they use.
+
+-  Facade pattern hides the complexities of the system and provides an interface to the client using which the client 
+can access the system. This type of design pattern comes under structural pattern as this pattern adds an interface to 
+existing system to hide its complexities.
+
+.Example Facade Pattern for Complex Coffee Machine
+----
+include::design_patterns/facade/facade.py[]
+----
+
+.Output
+[source, console]
+----
+Coffee Grind Operation Completed! It tooks 8.64 seconds
+Water is ready! It tooks 156.66666666666666 seconds. 
+Distill Operation Completed! It tooks 282.3 seconds.
+Filter Coffee Is ready for 3 cups.
+----
+
+
 
 === Creational Patterns
 

@@ -14,11 +14,17 @@
         "--max-line-length=120",
         "--output-format=colorized"
     ],
+    "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Args": [
         "--max-line-length",
         "120",
         "experimental"
     ],
     "python.autoComplete.addBrackets": true,
-    "python.analysis.completeFunctionParens": true
+    "python.analysis.completeFunctionParens": true,
+    "python.analysis.extraPaths": [
+        "./my_notes",
+        "./my_notes/design_patterns",
+        "./my_notes/design_patterns/decorator"
+    ],
 }
