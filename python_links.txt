@@ -54,3 +54,6 @@ https://towardsdatascience.com/memory-management-and-garbage-collection-in-pytho
 
 multithreading
 https://medium.com/swlh/how-to-start-multithreading-in-python-in-just-5-minutes-fe1f28d7aa56
+
+context_manager
+https://book.pythontips.com/en/latest/context_managers.html

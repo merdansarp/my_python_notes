@@ -15,6 +15,11 @@
 * Design Patterns
 
 ** Decorators
+** Singleton
+** Facade
+** Observer
+** Iterator
+** Dependency Injection
 
 * Context Managers
 
@@ -348,9 +353,57 @@ then dependency injection will facilitate team development.
 
 == Context Managers
 
-- Why we need?
-- Common Usages
-- Our Examples
+- Context managers allow you to allocate and release resources precisely when you want to. The most widely used example 
+of context managers is the "with" statement.
+- Suppose you have two related operations which you’d like to execute as a pair, with a block of code in between. 
+Context managers allow you to do specifically that.
+
+.Context Manager 101
+----
+include::context_manager/context_manager_1.py[]
+----
+
+- We can implement Context Manager as class.
+- 1. The with statement stores the __exit__ method of the File class.
+- 2. It calls the __enter__ method of the File class.
+- 3. The __enter__ method opens the file and returns it.
+- 4. The opened file handle is passed to opened_file.
+- 5. We write to the file using .write().
+- 6. The with statement calls the stored __exit__ method.
+- 7. The __exit__ method closes the file.
+
+.Implementing a Context Manager as a Class
+----
+include::context_manager/context_manager_2.py[]
+----
+
+
+- Handling Exception: Type, value and traceback arguments of the __exit__ method. Between the 4th and 6th step, if an 
+exception occurs, Python passes the type, value and traceback of the exception to the __exit__ method. It allows the 
+__exit__ method to decide how to close the file and if any further steps are required. 
+- 1. It passes the type, value and traceback of the error to the __exit__ method.
+- 2. It allows the __exit__ method to handle the exception.
+- 3. If __exit__ returns True then the exception was gracefully handled.
+- 4. If anything other than True is returned by the __exit__ method then the exception is raised by the with statement.
+
+- Our __exit__ method returned True, therefore no exception was raised by the with statement.
+
+.Exception Handling in Context Manager
+----
+include::context_manager/context_manager_3.py[]
+----
+
+- Context manager can be used as generator.
+- 1. Python encounters the yield keyword. Due to this it creates a generator instead of a normal function.
+- 2. Due to the decoration, contextmanager is called with the function name (open_file) as its argument.
+- 3. The contextmanager decorator returns the generator wrapped by the GeneratorContextManager object.
+- 4. The GeneratorContextManager is assigned to the open_file function. Therefore, when we later call the open_file 
+function, we are actually calling the GeneratorContextManager object.
+
+.Implement Context Manager as Decorator
+----
+include::context_manager/context_manager_4.py[]
+----
 
 == Multithread
 
