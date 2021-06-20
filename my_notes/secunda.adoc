@@ -19,7 +19,7 @@
 ** Facade
 ** Observer
 ** Iterator
-** Dependency Injection
+* Dependency Injection
 
 * Context Managers
 
@@ -44,7 +44,7 @@ created; immutable object can't.
 
 - Immutable Object: Objects that can't change after creation. (int, float, bool, str, tuple, unicode)
 
-- Immutable Table:
+- Mutable/Immutable Table:
 
 image::immutable.png["Immutable Table"]
 
@@ -182,11 +182,15 @@ include::asterisk/usage.py[]
 - Design patterns are solutions to general problems that software developers faced during software development. These
 solutions were obtained by trial and error by numerous software developers over quite a sibstanial period of time.
 
-- Why we need?
-- Gang of Four
-- Common Python Patterns.
-- Common Usages
-- Our Examples
+- Gang of Four: The four authors of the book: Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides, 
+have since been dubbed “The Gang of Four”.
+
+- The GoF Design Patterns are broken into three categories: 
+- Creational Patterns for the creation of objects
+- Structural Patterns to provide relationship between objects
+- Behavioral Patterns to help define how objects interact.
+
+image::gang_of_four.png["Gang Of Four"]
 
 - Some Principles to Follow
 * Never create things that shouldn’t be created: Your classes should follow the single responsibility principle;
@@ -203,8 +207,69 @@ However, you, as a developer, should never make any assumptions about what that 
 
 ==== Iterators
 
-- What is iterators?
-- Examples
+- Iterators allow us to traverse the elements of the collections without taking the exposure of in-depth details of the 
+elements. It provides a way to access the elements of complex data structure sequentially without repeating them.
+- According to GangOfFour, Iterator Pattern is used ”to access the elements of an aggregate object sequentially 
+without exposing its underlying implementation”.
+- It’s not always a good habit to use the Iterator Method because sometimes it may prove as an overkill of resources 
+in a simple application where complex things are not required.
+- Passing the new iterators and collections into the client code does not break the code can easily be installed 
+into it.
+- An iterator is an object that contains a countable number of values.
+- Iterator is an object which implements the iterator protocol, which consist of the methods __iter__() and __next__().
+- Lists, tuples, dictionaries, and sets are all iterable objects. They are iterable containers which you can get an 
+iterator from.
+
+- The for loop actually creates an iterator object and executes the next() method for each loop.
+
+.Iterator 101
+[source, python]
+----
+include::design_patterns/iterator/iterator_1.py[]
+----
+
+.Output
+[source, console]
+----
+notifier
+asgard
+C
+a
+f
+e
+X
+O
+R
+----
+
+- To create an object/class as an iterator you have to implement the methods __iter__() and __next__() to your object.
+- The __iter__() method acts similar, you can do operations (initializing etc.), but must always return the iterator 
+object itself.
+- The __next__() method also allows you to do operations, and must return the next item in the sequence.
+- We can add stop condition to __next__ method.
+
+.Create an Iterator
+[source, python]
+----
+include::design_patterns/iterator/iterator_2.py[]
+----
+
+.Output
+[source, console]
+----
+1
+3
+5
+For Loop after using 3 times! 
+For Loop: 1
+For Loop: 3
+For Loop: 5
+For Loop: 7
+For Loop: 9
+For Loop: 11
+For Loop: 13
+For Loop: 15
+----
 
 ==== Observers
 
@@ -300,12 +365,24 @@ Filter Coffee Is ready for 3 cups.
 
 ==== Singleton
 
-- Why singleton?
+- Use the Singleton pattern when a class in your program should have just a single instance available to all clients.
+- Singleton is a creational design pattern, which ensures that only one object of its kind exists and provides a single 
+point of access to it for any other code. Singleton has almost the same pros and cons as global variables.
+- Using a singleton pattern has many benefits. A few of them are:
+* To limit concurrent access to a shared resource.
+* To create a global point of access for a resource.
+* To create just one instance of a class, throughout the lifetime of a program.
+
 - Give examples.
 
 === Dependency Injection
 
 - Dependency Injection is "D" for SOLID Principles.
+* S - Single-responsiblity Principle
+* O - Open-closed Principle
+* L - Liskov Substitution Principle
+* I - Interface Segregation Principle
+* D - Dependency Inversion Principle
 - Dependency Injection is an object-oriented software design principle that creates less fragile code and makes 
 writing tests easier by decoupling lower-level classes from higher-level classes.
 - Minimalistic dependencies — As the dependencies are clearly defined, easier to eliminate/reduce unnecessary 
@@ -350,6 +427,47 @@ in different ways. Small classes that do one thing can more easily be reassemble
 abstractions instead of implementations, code can easily vary a given implementation.
 * Team-ability: If you are on a team and that team needs to work together on a project (when is that not true?), 
 then dependency injection will facilitate team development.
+
+== Generator Functions
+
+- Python provides a generator to create your own iterator function. 
+- A generator is a special type of function which does not return a single value, instead, it returns an iterator 
+object with a sequence of values. In a generator function, a yield statement is used rather than a return statement.
+
+- The generator functions can't include return! If we add "return", function will be terminated.
+- "yield" returns a value and pauses the execution.
+
+.Generators 101
+----
+include::generators/generators_1.py[]
+----
+
+.Output
+[source, console]
+----
+First Step!
+After first
+Second Step!
+After Second
+Dev'sTEP!!
+----
+
+- Generators can be use with loops
+.Generators with loops
+----
+include::generators/generators_2.py[]
+----
+
+.Output
+[source, console]
+----
+1
+4
+9
+16
+Iteration has stopped.
+----
+
 
 == Context Managers
 
@@ -522,8 +640,46 @@ generations to zero. This change led to their web applications running 10% more 
 
 == Performance Improvement
 
-- Why we need?
-- Performance Tips and Usage.
+- I want to mention about some python performance trics. (with comparsion)
+- Using list comphersions.
+
+.List Comphersions
+[source, python]
+----
+include::performance_improvements/first.py[]
+----
+
+.Output
+[source, console]
+----
+Elapsed Time: 0.0069141387939453125 seconds
+Elapsed Time: 0.00476837158203125 seconds
+----
+
+- If you’re working with lists, consider writing your own generator to take advantage of this lazy loading and memory 
+efficiency. Generators are particularly useful when reading a large number of large files. It’s possible to process 
+single chunks without worrying about the size of the files.
+
+- Remember to use multiple assignment. But Newer versions of python, these are same :D
+.Multiple Assignments
+[source, python]
+----
+include::performance_improvements/second.py[]
+----
+
+.Output
+[source, console]
+----
+Elapsed Time: 0.00095367431640625 seconds
+Elapsed Time: 0.00095367431640625 seconds
+----
+
+- Avoid global variables. Using few global variables is an effective design pattern because it helps you keep track of 
+scope and unnecessary memory usage. 
+
+- Try to leave a function as soon as you know it can do no more meaningful work.
+
+- Use operator itemgetter keys for sort operations.
 - Maybe game or demo examples. (DEMO CULTURE)
 - Common Usages
 - Our Examples

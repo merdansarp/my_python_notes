@@ -46,6 +46,7 @@ https://betterprogramming.pub/the-6-benefits-of-dependency-injection-7802b207ec6
 https://sourcemaking.com/design_patterns/observer
 https://sourcemaking.com/design_patterns/observer/python/1
 https://www.geeksforgeeks.org/iterator-method-python-design-patterns/
+https://refactoring.guru/design-patterns/python
 
 garbage collection
 https://docs.python.org/3/library/gc.html
