@@ -373,7 +373,10 @@ point of access to it for any other code. Singleton has almost the same pros and
 * To create a global point of access for a resource.
 * To create just one instance of a class, throughout the lifetime of a program.
 
-- Give examples.
+.Singleton Usage with DB Connection
+----
+include::design_patterns/singleton/singleton.py[]
+----
 
 === Dependency Injection
 
