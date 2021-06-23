@@ -46,7 +46,7 @@ created; immutable object can't.
 
 - Mutable/Immutable Table:
 
-image::immutable.png["Immutable Table"]
+image::immutable.png[]
 
 == Usage of Asterisk - Send Multiple Parameters to Function with *Args and **Kwargs
 
@@ -190,7 +190,7 @@ have since been dubbed “The Gang of Four”.
 - Structural Patterns to provide relationship between objects
 - Behavioral Patterns to help define how objects interact.
 
-image::gang_of_four.png["Gang Of Four"]
+image::gang_of_four.png[]
 
 - Some Principles to Follow
 * Never create things that shouldn’t be created: Your classes should follow the single responsibility principle;
@@ -202,6 +202,11 @@ for later use. They shouldn’t include any coding logic.
 
 * Don’t assume anything about the implementation: Interfaces are, of course, useless without an implementation. 
 However, you, as a developer, should never make any assumptions about what that implementation is.
+
+* KISS (Keep It Simple)
+
+* DIE (Duplication Is Evil)
+
 
 === Behavioral Patterns
 
@@ -284,7 +289,7 @@ notified and updated automatically.
 - Encapsulate the core (or common or engine) components in a Subject abstraction, and the variable 
 (or optional or user interface) components in an Observer hierarchy.
 
-image::design_patterns/observer/observer.png[Observer Example]
+image::design_patterns/observer/observer.png[]
 
 .Observer Example
 ----
