@@ -59,3 +59,7 @@ https://medium.com/swlh/how-to-start-multithreading-in-python-in-just-5-minutes-
 
 context_manager
 https://book.pythontips.com/en/latest/context_managers.html
+
+composite
+https://refactoring.guru/design-patterns/composite
+https://medium.com/design-patterns-in-python/composite-design-pattern-7873cb695765

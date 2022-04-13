@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/sarpyucel/dev/envs/jimi-env/bin/python3.9",
+    "python.pythonPath": "C:\\Users\\user\\Projects\\python_environments\\jimi-env\\Scripts\\python.exe",
     "workbench.sideBar.location": "left",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,

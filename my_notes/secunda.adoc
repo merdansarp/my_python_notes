@@ -17,6 +17,7 @@
 ** Decorators
 ** Singleton
 ** Facade
+** Composite
 ** Observer
 ** Iterator
 * Dependency Injection
@@ -364,7 +365,43 @@ Distill Operation Completed! It tooks 282.3 seconds.
 Filter Coffee Is ready for 3 cups.
 ----
 
+==== Composite
 
+- Composite is a structural design pattern that allows composing objects into a tree-like structure and work with 
+the it as if it was a singular object.
+
+- Composite is great feature is the ability to run methods recursively over the whole tree structure and sum up 
+the results.
+
+- It conforms to the Single Responsibility Principle in the way that it separates the aggregation of objects from the 
+features of the object.
+
+.Example Composite Pattern For Army
+----
+include::design_patterns/composite/composite.py[]
+----
+
+.Output
+[source, console]
+----
+First Composite Object is initializing..
+Object added to composite
+Object added to composite
+First Composite Object Operations have been completed! 
+
+Second Composite Object is initializing..
+Object added to composite
+Object added to composite
+Second Composite Object Operations have been completed!
+
+I give you the First Composite Object:
+Triangle
+Square
+I give you the Second Composite Object:
+Circle
+Triangle
+Square
+----
 
 === Creational Patterns
 
