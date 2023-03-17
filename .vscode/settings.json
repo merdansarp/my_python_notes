@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\user\\Projects\\python_environments\\jimi-env\\Scripts\\python.exe",
+    "python.defaultInterpreterPath": "C:\\Users\\sarpin\\DevProjects\\python_environments\\nash-env\\Scripts\\python.exe",
     "workbench.sideBar.location": "left",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
