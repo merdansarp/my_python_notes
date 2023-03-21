@@ -1,5 +1,6 @@
 {
-    "python.defaultInterpreterPath": "C:\\Users\\sarpin\\DevProjects\\python_environments\\nash-env\\Scripts\\python.exe",
+    // "python.defaultInterpreterPath": "C:\\Users\\sarpin\\DevProjects\\python_environments\\nash-env\\Scripts\\python.exe",
+    "python.defaultInterpreterPath": "/home/sarp/Developer/python-environments/zion-env/bin/python3.10",
     "workbench.sideBar.location": "left",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
